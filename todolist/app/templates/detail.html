@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'detail.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <div class="top">
+    <p>할 일</p>
+    </div>
+    <div class="mid">
+    <p class="title">{{ post.title }}</p>
+    <p class="content">{{ post.content }}</p>
+    <p class="deadline">{{ post.deadline }}</p>
+    </div>
+    <div class="bot">
+        <a href="{% url 'home' %}">
+            <span class="material-icons">
+                home
+            </span>
+            홈으로</a>
+        <a href="{% url 'edit' post.pk %}">
+            <span class="material-icons">
+                alarm_on
+            </span>
+            수정하기</a>
+        <a href="{% url 'delete' post.pk %}">
+            <span class="material-icons">
+                alarm_off
+            </span>
+            삭제하기</a>
+    </div>
+</body>
+</html>

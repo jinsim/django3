@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'new.css' %}" type='text/css'>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body>
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset>
+        <legend>제목</legend>
+        <input class="title" type="text" name="title" placeholder="제목을 입력해주세요">
+        </fieldset>
+        <fieldset>
+        <legend>세부사항</legend>
+        <textarea class="content" name="content" cols="40" rows="10" placeholder="세부사항을 입력해주세요">{{ post.content }}</textarea>
+        </fieldset>
+        <fieldset>
+        <legend>마감기한</legend>
+        <input class="deadline" type="date" name="deadline" placeholder="마감기한을 입력해주세요">
+        </fieldset>
+        <fieldset>
+        <button type="submit">
+            <span class="material-icons">
+                alarm_add
+            </span>
+            작성하기
+        </button>
+        </fieldset>
+    </form>
+</body>
+</html>

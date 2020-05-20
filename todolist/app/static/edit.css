@@ -1,0 +1,54 @@
+html {
+    width: 100%;
+    height: 100%;
+    font-size: 62.5%;
+    display: flex;
+    justify-content: center;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    /* border: 0.2rem dotted black; */
+    background: #2980B9;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #FFFFFF, #6DD5FA, #2980B9); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color: snow;
+    margin: 0;
+    padding: 0;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60%;
+    height: 100%;
+}
+fieldset {
+    display: flex;
+    justify-content: center;
+    /* min-width: 100%; */
+    margin: 2rem;
+    /* padding: 10rem; */
+    border-radius: 1rem;
+    /* border: snow 0.5rem; */
+}
+button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto;
+    height: auto;
+    font-size: 1.7rem;
+}
+.title {
+
+}
+.material-icons {
+    line-height: 100%;
+}
