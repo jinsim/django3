@@ -1,38 +1,57 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    {% load static %}
-    <link rel="stylesheet" href="{% static 'detail.css' %}" type='text/css'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>
-    <div class="top">
-    <p>할 일</p>
-    </div>
+{% extends 'base.html' %}
+
+{% block title %}detail{% endblock %}
+
+{% block content %}
+<div class="body">
     <div class="mid">
-    <p class="title">{{ post.title }}</p>
-    <p class="content">{{ post.content }}</p>
-    <p class="deadline">{{ post.deadline }}</p>
+        <div class="mid_title">
+            <p class="title">{{ post.title }}</p>
+        </div>
+        <p class="content">{{ post.content }}</p>
+        <p class="deadline">{{ post.deadline }}</p>
     </div>
     <div class="bot">
-        <a href="{% url 'home' %}">
-            <span class="material-icons">
-                home
-            </span>
-            홈으로</a>
-        <a href="{% url 'edit' post.pk %}">
-            <span class="material-icons">
-                alarm_on
-            </span>
-            수정하기</a>
-        <a href="{% url 'delete' post.pk %}">
-            <span class="material-icons">
-                alarm_off
-            </span>
-            삭제하기</a>
+        <div class="bot_com">
+            {% for comment in post.comments.all %}
+            <div class="bot_com_show">
+                <div class="bot_com_show_con">
+                    {{ comment.content}}
+                </div>
+                <div class="bot_com_show_del">
+                    <a href="{% url 'delete_comment' post.pk comment.pk %}">댓글 삭제</a>
+                </div>
+            </div>
+            {% endfor %}
+            <form method="POST">
+                <div class="bot_com_sub">
+                    {% csrf_token %}
+                    <div class="bot_com_sub_con">
+                        <input type="text" name="content" placeholder="댓글을 입력해주세요">
+                    </div>
+                    <div class="bot_com_sub_add">
+                        <button type="submit">댓글 쓰기</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="bot_bar">
+            <a href="{% url 'home' %}">
+                <span class="material-icons">
+                    home
+                </span>
+                홈으로</a>
+            <a href="{% url 'edit' post.pk %}">
+                <span class="material-icons">
+                    alarm_on
+                </span>
+                수정하기</a>
+            <a href="{% url 'delete' post.pk %}">
+                <span class="material-icons">
+                    alarm_off
+                </span>
+                삭제하기</a>
+        </div>
     </div>
-</body>
-</html>
+</div>
+{% endblock %}

@@ -1,3 +1,7 @@
+@font-face { font-family: 'fromdamiM'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_ten@1.0/fromdamiM.woff') format('woff'); font-weight: normal; font-style: normal; 
+}
+@font-face { font-family: 'InkLipquid'; src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/InkLipquid.woff') format('woff'); font-weight: normal; font-style: normal; 
+}
 html {
     width: 100%;
     height: 100%;
@@ -20,34 +24,72 @@ body {
     color: snow;
     margin: 0;
     padding: 0;
+    font-family: 'InkLipquid';
+}
+a { 
+    font-size: 2rem;
+    text-decoration: none;
+    color: snow;
+    display: flex;
+    align-items: center;
+}
+.header h1 {
+    font-size: 6rem;
+    font-family: 'fromdamiM';
+}
+.body {
+    max-width: 60%;
+    min-width: 35%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.main {
+    width: 90%;
 }
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 60%;
+    width: 100%;
     height: 100%;
 }
 fieldset {
     display: flex;
     justify-content: center;
-    /* min-width: 100%; */
-    margin: 2rem;
-    /* padding: 10rem; */
+    font-size: 3rem;
+    margin: 3rem;
+    max-width: 100%;
     border-radius: 1rem;
-    /* border: snow 0.5rem; */
+    border: snow solid 0.5rem;
+}
+textarea {
+    width: 100%;
+    height: auto;
+}
+input {
+    width: 40rem;
+}
+.submit {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
 }
 button {
+    background-color: skyblue;
+    background-color: transparent;
+    color: snow;
+    font-family: 'InkLipquid';
+    /* opacity: 0; */
+    border: 0px;
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     width: auto;
     height: auto;
-    font-size: 1.7rem;
-}
-.title {
-
+    font-size: 2.2rem;
 }
 .material-icons {
     line-height: 100%;

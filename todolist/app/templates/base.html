@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'home.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% static 'new.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% static 'detail.css' %}" type='text/css'>
+    <link rel="stylesheet" href="{% static 'edit.css' %}" type='text/css'>
+    <title>{% block title %}base{% endblock %}</title>
+</head>
+    
+<body>
+    <div class="header">
+        <a href="{% url 'home' %}">
+        <h1>김범진's To-Do-List 블로그</h1></a>
+    </div>
+    {% block content %}
+    
+    {% endblock %}
+    
+</body>
+</html>
