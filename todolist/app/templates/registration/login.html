@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}login{% endblock %}
+
+{% block content %}
+<div class="body">
+    <!-- <h1>로그인</h1> -->
+    {% if error %}
+    <h3 style="color: #ff0000;">{{ error }}</h3>
+    {% endif %}
+    <form method="POST">
+        {% csrf_token %}
+        <div class="main">
+            <fieldset>
+            <legend>아이디</legend>
+            <input type="text" name="username" placeholder="아이디">
+            </fieldset>
+            <fieldset>
+                <legend>비밀번호</legend>
+                <input type="password" name="password" placeholder="비밀번호">
+            </fieldset>
+        </div>
+        <div class="submit">
+            <button type="submit">로그인</button>
+        </div>
+    </form>
+</div>
+{% endblock content %}

@@ -46,6 +46,16 @@ a {
     align-items: center;
     justify-content: center;
 }
+.nav-bar {
+    width: 80%;
+    height: 10%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.nav-item {
+
+}
 .mid {
     width: 100%;
     display: flex;

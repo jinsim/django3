@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}mypage{% endblock %}
+
+{% block content %}
+<div class="body">
+    <div class="mid">
+        <h2>{{ user.username }}'s list</h2>
+        {% for post in posts %}
+            {% if user.is_authenticated and post.author.pk == user.pk %}
+                <a href="{% url 'detail' post.pk %}"><p>
+                <span class="material-icons">
+                    alarm
+                </span>
+                {{ post.title }}</p></a>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>    
+{% endblock %}
